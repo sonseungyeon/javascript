@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>간단한 계산기</title>
+</head>
+<body>
+    <p>
+        1. 두 수를 입력받아 버튼을 클릭 시, 해당되는 연산을 수행 후
+        p태그 안쪽에 결과값을 출력하는 코드 작성
+    </p>
+    <form name ="myCalc1">
+        <input type="text" name="number1" placeholder="숫자1 입력">
+        <input type="text" name="number2" placeholder="숫자2 입력">
+        <p id="result"></p>
+        <button type = "button" onclick="sum()">더하기</button>
+        <button type = "button" onclick="sub()">빼기</button>
+        <button type = "button" onclick="mul()">곱하기</button>
+        <button type = "button" onclick="div()">나누기</button>
+    </form>
+    <script>
+        function sum(){
+            var input1 = document.myCalc1.number1.value;
+            var input2 = document.myCalc1.number2.value;
+            var sum = Number(input1) + Number(input2);
+            var result = document.getElementById("result");
+            result.innerHTML = sum;
+        }
+        function sub(){
+            var input1 = document.myCalc1.number1.value;
+            var input2 = document.myCalc1.number2.value;
+            var sub = input1 - input2;
+            var result = document.getElementById("result");
+            result.innerHTML = sub;
+        }
+        function mul(){
+            var input1 = document.myCalc1.number1.value;
+            var input2 = document.myCalc1.number2.value;
+            var mul = input1 * input2;
+            var result = document.getElementById("result");
+            result.innerHTML = mul;
+        }
+        function div(){
+            var input1 = document.myCalc1.number1.value;
+            var input2 = document.myCalc1.number2.value;
+            var div = input1 / input2;
+            var result = document.getElementById("result");
+            result.innerHTML = div;
+        }
+    </script>
+
+
+
+    <p>
+        2. 두 수를 입력받아 라디오 버튼으로 선택된 연산을 수행 후
+        p태그 안쪽에 결과값을 출력하는 코드 작성
+    </p>
+    <form name ="myCalc2">
+        <input type="text" name="number1" placeholder="숫자1 입력">
+        <input type="text" name="number2" placeholder="숫자2 입력">
+        <fieldset>
+            <legend>연산</legend>
+            <label><input type="radio" name="op" value="+">+</label>
+            <label><input type="radio" name="op" value="*">*</label>
+            <label><input type="radio" name="op" value="-">-</label>
+            <label><input type="radio" name="op" value="/">/</label>
+        </fieldset>
+        <button type="button" onclick ="sum_radio()">확인</button>
+        <p id="result2"></p>
+    </form>
+    <script>
+        
+        function sum_radio(){
+            var input3 = document.myCalc2.number1.value;
+            var input4 = document.myCalc2.number2.value;
+            var myCalc2List = document.myCalc2.op;
+            var result2;
+            for(var op of myCalc2List){
+                if(op.checked){
+                    if(op.value == "+"){
+                        result2 = Number(input3) + Number(input4);
+                    }else if(op.value == "*"){
+                        result2 = input3 * input4;
+                    }else if(op.value == "-"){
+                        result2 = input3 - input4;
+                    }else if(op.value == "/"){
+                        result2 = input3 / input4;
+                    }
+                }
+            }
+            document.querySelector("#result2").innerHTML = result2;
+            
+        }
+        
+    </script>
+    <p>
+        3.두 수를 입력받아 버튼 클릭 시 라디오 버튼으로 선택된 연산을 수행 후
+        p태그 안쪽에 결과값을 출력하는 코드 작성
+    </p>
+    <form name ="myCalc3">
+        <input type="text" name="number1" placeholder="숫자1 입력">
+        <select name ="op">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type = "text" name = "number2" placeholder = "숫자2 입력">
+        <button type="button" onclick="button_radio()">확인</button>
+        <p id="result3"></p>
+    </form>
+    <script>
+        function button_radio(){
+            var input1 = document.myCalc3.number1.value;
+            var input2 = document.myCalc3.number2.value;
+            var myCalc3List = document.myCalc3.op;
+            var print = myCalc3List.value;
+            var result3;
+            for(var op of myCalc3List.value){
+                console.log(op);
+                    if(op == "+"){
+                        result3 = Number(input1) + Number(input2);
+                        console.log(result3);
+                    }else if(op == "*"){
+                        result3 = input1 * input2;
+                    }else if(op == "-"){
+                        result3 = input1 - input2;
+                    }else if(op == "/"){
+                        result3 = input1 / input2;
+                    }
+            }
+            document.querySelector("#result3").innerHTML = result3;
+        }
+    </script>
+    <p>
+        4. 버튼으로 입력된 식을 계산하여 p태그에 출력
+    </p>
+    <form name="myCalc4">
+        <hr>
+        <input type="text" name="sic" placeholder="식을 입력"><br>
+        <button value="1">1</button><button value="2">2</button><button value="3">3</button><br>
+        <button value="4">4</button><button value="5">5</button><button value="6">6</button><br>
+        <button value="7">7</button><button value="8">8</button><button value="9">9</button><br>
+        <button value="0">0</button><br>
+        <button value="+">+</button><button value="-">-</button><button type="button" onclick="myCalc4_ex()">확인</button>
+        <p id="result4"></p>
+    </form>
+    <script>
+        function myCalc4_ex(){
+            var myCalc4_value=document.MyCalc4.sic.value;
+            console.dir(myCalc4_value);
+        }
+    </script>
+            
+    
+</body>
+</html>

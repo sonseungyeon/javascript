@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>id, class를 이용한 실습</title>
+    <style>
+        .foods{color: red}
+        .health{background-color: green}
+        .chobab_none{display: none}
+        /*글자 빨강에 대한 정의*/
+        /*배경을 초록으로 바꾸는 정의*/
+        /*안보이는 것*/
+    </style>
+</head>
+<body>
+    <button onclick = "chFont()">음식 종류의 글자색을 빨강색으로 변경</button>
+    <button onclick = "chBg()">헬스의 배경색을 초록색으로 변경</button>
+    <button onclick = "show_hide()">초밥을 안보이게 / 보이게 함</button>
+    <ul>
+        <li>음식
+            <ol>
+                <li>삼겹살</li>
+                <li>산낙지</li>
+                <li>초밥</li>
+                <li>순대국</li>
+                <li>족발</li>
+            </ol>
+        </li>
+        <li>취미
+            <ol>
+                <li>롤</li>
+                <li>배그</li>
+                <li>음주가무</li>
+                <li>헬스</li>
+            </ol>
+        </li>
+    </ul>
+    <script>
+        function chFont(){
+            let ol = document.getElementsByTagName("ol")[0];
+            let ol_li = ol.querySelectorAll("ol>li");
+            //for-each문과 같음.
+            /*for(var li of ol_li{
+                li.className = "f_red";
+            }*/
+            for(let i = 0;i<ol_li.length;i++){
+                ol_li[i].classList.add("foods");
+            }
+        }
+
+        function chBg(){
+            let ol2 = document.getElementsByTagName("ol")[1];
+            let ol2_li = ol2.children[3];
+            ol2_li.classList.add("health");
+        }
+
+        let flag = false;
+        function show_hide(){
+            let ol = document.getElementsByTagName("ol")[0];
+            let ol_li2 = ol.children[2];
+
+            ol_li2.classList.toggle("chobab_none");
+            if(flag == false){
+                ol_li2.className = "chobab_none";
+                flag = true;
+
+            }else{
+                ol_li2.className = "";
+                flag = false;
+            }
+
+            /*
+            if(ol_li2.classList.contains("chobab_none")){
+                ol_li2.classList.remove("chobab_none");
+            }else{
+                ol_li2.classList.add("chobab_none");
+            }
+            */
+            
+            /*숙제*/
+            /*버튼을 클릭할 때마다 글자색이
+            빨,주,노,초,파,남,보,빨,주,노 로 변경되도록 구현해보세요!*/
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <title>제어문</title>
+</head>
+<body>
+    <h1>제어문</h1>
+    <dl>
+        <dt>조건문</dt>
+        <dd>
+            <ul>
+                <li> if() </li>
+                <li> if-else() </li>
+                <li> if-ifelse-else() </li>
+                <li> switch-case </li>
+            </ul>
+        </dd>
+        <dt>반복문</dt>
+        <dd>
+            <ul>
+                <li> while() </li>
+                <li> do-while() </li>
+                <li> for() </li>
+                <li> for...in </li>
+            </ul>
+        </dd>
+    </dl>
+    <script>
+        var num =10;
+        if(num){ // 실행이 되는 코드 
+            console.log("실행이 되는가?");
+        }
+
+        //10번 반복
+        while(num){
+            num--;
+            console.log("num: ", num);
+        }
+
+        for(let i=0; i<10;i++){
+            console.log(i);
+        } 
+
+        //구구단 
+        for(var i = 2; i<10; i++){
+            for(var j = 1; j<10; j++){
+                console.log("i*j : ", i*j );
+            }  
+        }
+
+        var i1 = 1;
+        while(i1<10){
+            var j1=1;
+            while(j1<10){
+                console.log("i1*j1 : ", i1*j1 );
+                j1++;
+            }
+            i1++;
+        }
+
+    </script>
+</body>
+</html>

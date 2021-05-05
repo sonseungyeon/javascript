@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>무지개</title>
+    <style>
+        .color_red{color: red}
+        .color_orange{color: orange}
+        .color_yellow{color: yellow}
+        .color_green{color: green}
+        .color_blue{color: blue}
+        .color_indigo{color: indigo}
+        .color_grape{color: blueviolet}
+
+        /*글자 빨강에 대한 정의*/
+        /*배경을 초록으로 바꾸는 정의*/
+        /*안보이는 것*/
+    </style>
+</head>
+<body>
+    <button onclick = "rainbow()">클릭할 때 마다 색깔 변경</button>
+    <ul>
+        <li>색깔
+            <ol>
+                <li>바뀌는 색</li>
+            </ol>
+        </li>
+    </ul>
+    <script>
+function rainbow(){
+    let ol = document.getElementsByTagName("ol")[0];
+    let ol_chil = ol.children[0];
+
+    ol_chil.className = "color_grape";
+        if(ol_chil.className = "color_grape"){
+            ol_chil.classList.remove("color_grape");
+            ol_chil.classList.add("color_red");
+        }else if(ol_chil.className ="color_red"){
+            ol_chil.classList.remove("color_red");
+            ol_chil.classList.add("color_orange");
+        }else if(ol_chil.className ="color_orange"){
+            ol_chil.classList.remove("color_orange");
+            ol_chil.classList.add("color_yellow");
+        }else if(ol_chil.className ="color_yellow"){
+            ol_chil.classList.remove("color_yellow");
+            ol_chil.classList.add("color_green");
+        }else if(ol_chil.className ="color_green"){
+            ol_chil.classList.remove("color_green");
+            ol_chil.classList.add("color_blue");
+        }else if(ol_chil.className ="color_blue"){
+            ol_chil.classList.remove("color_blue");
+            ol_chil.classList.add("color_indigo");
+        }else if(ol_chil.className ="color_indigo"){
+            ol_chil.classList.remove("color_indigo");
+            ol_chil.classList.add("color_grape");
+        }
+    
+}
+</script>
+</body>
+</html>

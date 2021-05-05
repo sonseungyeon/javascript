@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>돔 선택 실습</title>
+</head>
+<body>
+    <h1>라면 요리</h1>
+    <dl>
+        <dt>라면 재료</dt>
+        <dd>
+            <ul>
+                <li id="ramyun">봉지라면</li>
+                <li>물 500ml</li>
+                <li class = "some">달걀 한 개</li>
+                <li class = "some">대파 조금</li>
+                <li class = "some">청양 고추 한 개</li>
+            </ul>
+        </dd>
+        <dt>라면 끓이는 법</dt>
+        <dd>
+            <ol>
+                <li>냄비에 물을 넣고 끓인다</li>
+                <li>라면과 스프를 넣는다</li>
+                <li>청양고추를 송송 썰어 넣는다</li>
+                <li>달걀을 넣는다</li>
+                <li>불을 끄고 대파를 송송썰어 넣는다</li>
+
+            </ol>
+        </dd>
+    </dl>
+    <script>
+        //1. id가 ramyun인 요소를 선택하여
+        //그 요소를 기준으로
+        //청양고추를 송송 썰어 넣는다라는 내용이 있는 li
+        //를 찾아 선택하고 출력하시오
+        var ramyun = document.getElementById("ramyun");
+        var ramyun_parent = ramyun.parentElement;
+        var ramyun_parent2 = ramyun_parent.parentElement;
+        var dl = ramyun_parent2.parentElement;
+        var dd = dl.children[3];
+        var dd_ol = dd.children[0];
+        var dd_ol_last = dd_ol.children[2];
+        console.log(dd_ol_last);
+
+        //2. 클래스가 some인 아이의 마지막 요소를 출력하시오
+        var some = document.getElementsByClassName("some");
+        var dl_li2 = dl.children[1];
+        var dl_li_ul = dl_li2.children[0];
+        var dl_li_ul_last = dl_li_ul.lastElementChild;
+        console.log(dl_li_ul_last);
+
+        //3. 태그 이름이 dt인 아이를 선택하여 출력하시오
+        var tag_dt = document.getElementsByTagName("dt");
+        console.log(tag_dt);
+
+        //4. ol의 마지막 자식요소를 선택하고 그 안에 텍스트노드를 선택하여 출력하시오
+        var dl_ol_last = dd_ol.lastElementChild;
+        console.log(dl_ol_last);
+        
+    </script>
+</body>
+</html>

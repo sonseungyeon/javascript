@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>간단한 계산기</title>
+</head>
+<body>
+    <p>
+        1.두 수를 입력받아 버튼을 클릭 시, 해당되는 연산을 수행 후
+        p태그 안쪽에 결과값을 출력하는 코드 작성
+    </p>
+    <form name="myCalc1">
+        <input type="text" name="number1" placeholder="숫자1 입력">
+        <input type="text" name="number2" placeholder="숫자2 입력">
+        <p id="result1"></p>
+        <button onclick="oper1('+')">더하기</button>
+        <button onclick="oper1('-')">빼기</button>
+        <button onclick="oper1('*')">곱하기</button>
+        <button onclick="oper1('/')">나누기</button>
+    </form>
+    <script>
+        function oper1(op){
+            var number1 = document.myCalc1.number1.value;
+            var number2 = document.myCalc1.number2.value;
+            var result1;
+            if(op=="+"){
+                result1 = parseInt(number1)+parseInt(number2);
+            }else if(op=="-"){
+                result1 = parseInt(number1)-parseInt(number2);
+            }else if(op=="*"){
+                result1 = parseInt(number1)*parseInt(number2);
+            }else if(op=="/"){
+                result1 = parseInt(number1)/parseInt(number2);
+            }
+            document.querySelector("#result1").innerHTML = result;
+        }
+    </script>
+    <p>
+        2.두 수를 입력받아 버튼 클릭시 라디오 버튼으로 선택된 연산을 수행 후
+        p태그 안쪽에 결과값을 출력하는 코드 작성
+    </p>
+    <form name="myCalc2">
+        <input type="text" name="number1" placeholder="숫자1 입력">
+        <input type="text" name="number2" placeholder="숫자2 입력">
+        <fieldset>
+            <legend>연산</legend>
+            <label><input type="radio" name="op" value="+">+</label> 
+            <label><input type="radio" name="op" value="*">*</label> 
+            <label><input type="radio" name="op" value="-">-</label> 
+            <label><input type="radio" name="op" value="/">/</label> 
+        </fieldset>
+        <button type="button" onclick = oper2()>확인</button>
+        <p id="result2"></p>
+    </form>
+    <script>
+        function oper2(){
+            var number1 = document.myCalc2.number1.value;
+            var number2 = document.myCalc2.number2.value;
+            var opList = document.myCalc2.op;
+            var result2;
+            console.log(opList.value);
+            for(var op of opList){
+                if(op.checked){
+                    if(op.value == "+"){
+                        result2 = parseInt(number1)+parseInt(number2);
+                    }else if(op.value == "-"){
+                        result2 = parseInt(number1)-parseInt(number2);
+                    }else if(op.value == "*"){
+                        result2 = parseInt(number1)*parseInt(number2);
+                    }else if(op.value == "/"){
+                        result2 = parseInt(number1)/parseInt(number2);
+                    }
+                }
+            }
+            document.querySelector("#result2").innerHTML = result2;
+        }
+    </script>
+    <p>
+        3.두 수를 입력받아 버튼 클릭시 라디오 버튼으로 선택된 연산을 수행 후
+        p태그 안쪽에 결과값을 출력하는 코드 작성
+    </p>
+    <form name="myCalc3">
+        <input type="text" name="number1" placeholder="숫자1 입력">
+        <select name="op">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" name="number2" placeholder="숫자2 입력">
+        <button type="button">확인</button>
+        <p id="result3"></p>
+    </form>
+    <p>
+        4. 버튼으로 입력된 식을 계산하여 p태그에 출력
+    </p>
+    <form name="myCalc4">
+        <hr>
+        <input type="text" name="sic" placeholder="식을 입력"><br>
+        <button>1</button><button>2</button><button>3</button><br>
+        <button>4</button><button>5</button><button>6</button><br>
+        <button>7</button><button>8</button><button>9</button><br>
+        <button>0</button><br>
+        <button>+</button><button>-</button><button type="button">확인</button>
+        <p id="result4"></p>
+    </form>
+    <script>
+    </script>
+</body>
+</html>
