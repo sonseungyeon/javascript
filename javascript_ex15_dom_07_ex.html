@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>요소 추가 삭제 실습</title>
+    <style>
+        table{border: 1px solid black; border-collapse: collapse;width: 100%;}
+        th,td{border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <script>
+        //이름과 나이를 입력 후 추가 버튼을 클릭시
+        //테이블 안쪽에 이름, 나이값이 들어가도록 기능을 구현하세요
+        //추가
+
+        //삭제 버튼을 추가하고
+        //이름을 인풋에 입력 후 삭제 버튼을 클릭시 해당되는 이름이 있는
+        //로우를 삭제
+
+        //선택
+        //더블클릭시 해당되는 내용을 해당되는 컬럼에서 수정할 수 있도록 기능구현.
+    </script>
+    <input type="text" id="name" placeholder="이름을 입력하세요">
+    <input type="text" id="age" placeholder="나이를 입력하세요">
+    <button onclick="tableInsert()">추가</button>
+    <button onclick="tableDelete()">삭제</button>
+    <hr>
+    <table id="table">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+        </tr>
+    </table>
+    <script>
+        
+        function tableInsert(){
+            var name = document.getElementById("name");
+            var age = document.getElementById("age");
+            var table = document.getElementById("table");
+
+            var name_value = name.value;
+            var age_value = age.value;
+            
+            if(name_value == "" && age_value == ""){
+                alert("이름과 나이를 입력하세요");
+            }else if(age_value ==""){
+                alert("나이를 입력하세요");
+            }else if(name_value == ""){
+                alert("이름을 입력하세요");
+            }else{
+            var tr = table.children[0];
+
+            var tr = document.createElement("tr");
+            var th = document.createElement("th");
+            tr.appendChild(th);
+            table.appendChild(tr);
+
+            var tr2 = document.createElement("tr2");
+            var th2 = document.createElement("th");
+            tr.appendChild(th2);
+            table.appendChild(tr2);
+
+            th.innerHTML = name_value;
+            th2.innerHTML = age_value;
+
+            console.log();
+            }
+        };
+
+        /*삭제 버튼을 추가하고
+        이름을 인풋에 입력 후 삭제 버튼을 클릭시 해당되는 이름이 있는
+        로우를 삭제*/
+
+        //for문에 사용할 카운트는 tr의 개수를 사용(대신에 맨위에 이름,나이가 적힌 row는 빼고!) tr == row
+        function tableDelete(){
+            //이름 입력값, 나이 입력값, 테이블
+            var name = document.getElementById("name");
+            console.log();
+            var age = document.getElementById("age");
+            var table = document.getElementById("table");
+
+            var tr = table.children[1];
+            var name_th = tr.children[0];
+            var age_th = tr.children[1];
+
+            var name_value = name.value;
+            var age_value = age.value;
+
+            if(name_value == name_th.textContent && age_value == age_th.textContent){
+                tr.removeChild(name_th);
+                tr.removeChild(age_th);
+            }else{
+                alert("삭제할 이름과 나이가 없습니다");
+            }
+        };
+    </script>
+</body>
+</html>

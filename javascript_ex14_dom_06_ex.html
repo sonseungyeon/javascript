@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html 이벤트 사용 연습하기</title>
+    <style>
+        div{background: white;width: 100px;height: 50px;border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <h1>html 이벤트 사용 연습!!</h1><br>
+    <hr>
+    <h3>MouseEvent</h3>
+    <p>1. 마우스업 이벤트</p>
+    <p>마우스로 클릭하면 이벤트 발생</p>
+    <div id="mouseup">마우스업</div><br>
+
+    <p>2. 마우스오버 이벤트</p>
+    <p>마우스로 위에 갖다대면 이벤트 발생</p>
+    <div id="mouseover">마우스오버</div><br>
+
+    <p>3. 마우스아웃 이벤트</p>
+    <p>마우스로 위에 갖다댔다가 밖으로 나가면 이벤트 발생</p>
+    <div id="mouseout">마우스아웃</div><br>
+
+    <p>4. 온휠 이벤트</p>
+    <p>마우스로 위에 갖다대고 휠을 돌리면 이벤트 발생</p>
+    <div id="onwheel">온휠</div><br>
+
+    <hr>
+    <h3>KeyboardEvent</h3>
+    <p>5. keydown 이벤트</p>
+    <p>키보드 키들을 누르면 이벤트 발생</p>
+    <input type="text" id="keyboard"><br>
+
+    <p>6. keypress 이벤트</p>
+    <p>엔터 또는 스페이스바를 누르면 이벤트 발생</p>
+    <input type="text" id="keyboard2"><br>
+    
+    <p>7. keyup 이벤트</p>
+    <p>엔터 또는 스페이스바를 누르면 이벤트 발생</p>
+    <input type="text" id="keyboard3"><br>
+
+    <hr>
+    <h3>UiEvent</h3>
+    <p>8. load 이벤트</p>
+    <p>엔터 또는 스페이스바를 누르면 이벤트 발생</p>
+    <input type="text" id="load"><br>
+    
+    <p>9. resize 이벤트</p>
+    <p>엔터 또는 스페이스바를 누르면 이벤트 발생</p>
+    <input type="text" id="resize"><br>
+    
+    <p>10. scroll 이벤트</p>
+    <p>스크롤 이벤트 발생</p>
+    <div id="scroll">스크롤 이벤트 발생 스크롤 이벤트 발생
+        스크롤 이벤트 발생 스크롤 이벤트 발생
+        스크롤 이벤트 발생 스크롤 이벤트 발생
+        스크롤 이벤트 발생 스크롤 이벤트 발생</div>
+    <script>
+        // function chBackground01(el){
+        //     el.style.background = "palegoldenrod";
+        // };
+        
+        var mouseup = document.getElementById("mouseup");
+        mouseup.addEventListener("mouseup",function(){
+            this.style.backgroundColor = "palegoldenrod";
+        });
+
+        var mouseover = document.getElementById("mouseover");
+        mouseover.addEventListener("mouseover",function(){
+            this.style.backgroundColor = "palegoldenrod";
+        });
+
+        var mouseout = document.getElementById("mouseout");
+        mouseout.addEventListener("mouseout",function(){
+            this.style.backgroundColor = "palegoldenrod";
+        });
+
+        var onwheel = document.getElementById("onwheel");
+        onwheel.addEventListener("mousewheel",function(){
+            this.style.fontSize = "35px";
+        });
+
+        //getElementByName으로도 해보자!(얘는 배열로 받아오는 아이임)
+        var onkeydown = document.getElementById("keyboard");
+        onkeydown.addEventListener("keydown", function(){
+            alert("키보드를 눌렀습니다");
+        });
+
+        var onkeypress = document.getElementById("keyboard2");
+        onkeypress.addEventListener("keypress", function(){
+            alert("엔터나 스페이스바를 눌렀습니다");
+        });
+
+        var onkeyup = document.getElementById("keyboard3");
+        onkeyup.addEventListener("keyup", function(){
+            alert("키보드를 눌렀습니다");
+        });
+
+        load
+        var resize = document.getElementById("resize");
+        resize.addEventListener("resize",function(){
+
+        });
+
+        var scroll = document.getElementById("scroll");
+        scroll.addEventListener("scroll",function(){
+
+        });
+    </script>
+</body>
+</html>
