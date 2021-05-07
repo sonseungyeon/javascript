@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clock()">년월일시분초 표기</button>
+    <p id="clock"></p>
+    <hr>
+    <input type="text" name="personId" placeholder = "주민번호 입력">
+    <button onclick="rrn()">주민번호 체크</button>
+    <p id ="rrn">정상적인 주민번호인가 아닌가</p>
+    <script>
+        //Resident registration number
+        function rrn() {
+            var personId = document.getElementsByName("personId");
+            var ds = personId.value;
+            document.write(ds);
+            
+        }
+        //주민번호 : ㄱㄴㅇㄹㅁㅂ-ㅅㅇㅈㅊㅋㅌㅍ
+        //곱하기 234567892345
+        //ㄱ*2+ㄴ*3...ㅋ*4+ㅌ+5 = 총합 000
+        //000/11 ->나머지
+        //11에서 나머지 뺌
+        //남은 값에서 일의 자리를 구함
+        //일의자리 값이 ㅍ과 같으면 정상적인 주민번호
+    </script>
+    <script>
+        let str = document.querySelector("#clock");
+        function clock(){
+            var d = new Date();
+            var year = d.getFullYear();
+            var month = d.getMonth();
+            var day = d.getDay();      
+            var hour = d.getHours();
+            var minute = d.getMinutes();
+            var second = d.getSeconds();
+            str.innerText = year + "년 " + month + "월 " + day + "일 " + hour + "시 " + minute + "분 " + second + "초";
+            clock();
+            setInterval(clock,1000);
+        }
+    </script>
+    
+</body>
+</html>
