@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="personId" placeholder = "주민번호 입력">
+    <button>주민번호 체크</button>
+    <p id ="rrn">정상적인 주민번호인가 아닌가</p>
+    <script>
+        document.querySelector("button").onclick = function(){
+            var personId = document.querySelector("input");
+            //입력된 주민번호를 string으로 형변환하고
+            //"-"로 문자열 나누기하면 값이 배열로 나누어서 저장됨
+            var rrnArr = String(personId.value).split("-");
+            //""로 문자열 나누기하면 값이 각각 나누어서 배열로 저장됨
+            //[6]은 ,문자임
+            var rrnArrSplit= String(rrnArr).split("");
+            var rrnArr2 = [];
+            //입력한 주민번호가 담겨진 배열에서 ,를 제거하여 각각 배열로 저장함
+            for(var i =0;i<rrnArrSplit.length;i++){
+                if(rrnArrSplit[i] ==","){
+                    
+                }
+                else{
+                    rrnArr2.push(rrnArrSplit[i]);
+                }
+            }
+
+            var mulNum = [2,3,4,5,6,7,8,9,2,3,4,5];
+            var mulValue=0;
+
+            //rrnArr2에 입력된 주민번호 배열에서 마지막 값을 제외하고
+            //mulNum을 곱한값들을 mulValue에 전부 합하여 넣는다.
+            for(var i=0;i<rrnArr2.length-1;i++){
+                mulValue += rrnArr2[i]*mulNum[i];
+            }
+            
+            //11에서 나눈값을 뺐을때 정상적인 주민번호를 입력해도 -값이 나옴.
+            var divValue = mulValue%11;
+            var subValue = 11-divValue;
+
+            //일의자리 값을 구해서 oneDigit에 넣어준다.
+            var oneDigit = subValue;
+            if(oneDigit == rrnArr2[12]){
+                alert("유효한 주민번호값 입니다")
+            }else{
+                alert("정상적인 주민번호값을 입력하세요");
+            }
+        };
+        
+        //ㅅ =>성별
+        //주민번호 : ㄱㄴㄷㄹㅁㅂ-ㅅㅇㅈㅊㅋㅌㅍ
+        //곱하기 234567 892345
+        //ㄱ*2+ㄴ*3...ㅋ*4+ㅌ*5 = 총합 000
+        //000/11 ->나머지
+        //11에서 나머지 뺌
+        //남은 값에서 일의 자리를 구함
+        //일의자리 값이 ㅍ과 같으면 정상적인 주민번호
+    </script>
+</body>
+</html>
