@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입예제</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tableWidth {
+            width: 1100px;
+        }
+
+        .defaultColumn {
+            width: 250px;
+        }
+
+        .blueBackground {
+            background-color: rgb(124, 187, 212);
+            color: white;
+        }
+
+        .lightBlueBackground {
+            background-color: rgb(214, 240, 240);
+        }
+
+        .border {
+            border: 1px solid #444444;
+        }
+
+        .borderLeft {
+            border-left: 1px solid #444444;
+        }
+
+        .borderRight {
+            border-right: 1px solid #444444;
+        }
+
+        .borderBottom {
+            border-bottom: 1px solid #444444;
+        }
+
+        td {
+            padding: 3px;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="form">
+        <table class="tableWidth" style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <td colspan="5"><img src="images/ic_arrow_a.gif" alt="빨간 아이콘"><b>사항은 필수 입력 사항이므로 필히 입력하여 주십시오.</b></td>
+            </tr>
+            <tr>
+                <td class="blueBackground border" colspan="5">기본 정보</td>
+            </tr>
+            <tr>
+                <td class="lightBlueBackground defaultColumn borderLeft borderBottom"><img src="images/ic_arrow_a.gif"
+                        alt="빨간 아이콘">회원 ID</td>
+                <td colspan="4" class="borderRight borderBottom"><input type="text" name="id"><span
+                        id="idSpanTag"></span></td>
+            </tr>
+            <tr>
+                <td class="lightBlueBackground defaultColumn borderLeft borderBottom"><img src="images/ic_arrow_b.gif"
+                        alt="회색 아이콘">프로필 사진</td>
+                <td colspan="4" class="borderRight borderBottom"><input type="file" name="uploadFile" 파일 선택></td>
+            </tr>
+            <tr>
+                <td class="lightBlueBackground defaultColumn borderLeft borderBottom"><img src="images/ic_arrow_a.gif"
+                        alt="빨간 아이콘">비밀번호</td>
+                <td colspan="4" class="borderRight borderBottom"><input type="password" name="password"><span
+                        id="passwordSpanTag"></span></td>
+            </tr>
+            <tr>
+                <td class="lightBlueBackground defaultColumn borderLeft borderBottom"><img src="images/ic_arrow_a.gif"
+                        alt="빨간 아이콘">비밀번호 재입력</td>
+                <td colspan="4" class="borderRight borderBottom"><input type="password" name="reEnterPassword"><span
+                        id="passwordReEnterSpanTag"></span></td>
+            </tr>
+            <tr>
+                <td class="lightBlueBackground defaultColumn borderLeft borderBottom"><img src="images/ic_arrow_b.gif"
+                        alt="회색 아이콘">비밀번호 힌트</td>
+                <td colspan="4" class="borderRight borderBottom"><input type="text" name="hint" size=60></td>
+            </tr>
+            <tr>
+                <td class="lightBlueBackground defaultColumn borderLeft borderBottom"><img src="images/ic_arrow_b.gif"
+                        alt="회색 아이콘">추천해준 친구 ID</td>
+                <td colspan="4" class="borderRight borderBottom"><input type="text" name="friendId"></td>
+            </tr>
+            <tr>
+                <td class="lightBlueBackground defaultColumn borderLeft borderBottom"><img src="images/ic_arrow_a.gif"
+                        alt="빨간 아이콘">이름</td>
+                <td colspan="4" class="borderRight borderBottom"><input type="text" name="name" placeholder="이름을 입력하세요"><span
+                        id="nameSpanTag"></span></td>
+            </tr>
+            <tr>
+                <td class="lightBlueBackground defaultColumn borderLeft borderBottom"><img src="images/ic_arrow_a.gif"
+                        alt="빨간 아이콘">이메일</td>
+                <td colspan="4" class="borderRight borderBottom"><input type="email" name="email"
+                        placeholder="mail@gmail.com 형식"><span id="emailSpanTag"></span></td>
+            </tr>
+            <tr>
+                <td class="lightBlueBackground defaultColumn borderLeft borderBottom"><img src="images/ic_arrow_a.gif"
+                        alt="빨간 아이콘">주민등록번호</td>
+                <td colspan="4" class="borderRight borderBottom"><input type="text" name="rrn" placeholder="000000"
+                        size=10>-<input type="text" name="rrn2" placeholder="1234567" size=10><span
+                        id="rrnSpanTag"></span></td>
+            </tr>
+            <tr>
+                <td class="lightBlueBackground defaultColumn borderLeft borderBottom"><img src="images/ic_arrow_b.gif"
+                        alt="회색 아이콘">생년월일</td>
+                <td colspan="4" class="borderRight borderBottom"><input type="date" name="birthday"></td>
+            </tr>
+            <tr>
+                <td class="lightBlueBackground defaultColumn borderLeft borderBottom"><img src="images/ic_arrow_b.gif"
+                        alt="회색 아이콘">우편번호</td>
+                <td colspan="4" class="borderRight borderBottom"><input type="text" name="postalCode" size=8>-<input
+                        type="text" name="postalCode2" size=8></td>
+            </tr>
+            <tr>
+                <td class="lightBlueBackground defaultColumn borderLeft borderBottom"><img src="images/ic_arrow_b.gif"
+                        alt="회색 아이콘">주소1</td>
+                <td colspan="4" class="borderRight borderBottom"><input type="text" name="address" size=70></td>
+            </tr>
+            <tr>
+                <td class="lightBlueBackground defaultColumn borderLeft borderBottom"><img src="images/ic_arrow_b.gif"
+                        alt="회색 아이콘">주소2</td>
+                <td colspan="4" class="borderRight borderBottom"><input type="text" name="address2" size=70></td>
+            </tr>
+            <tr>
+                <td class="lightBlueBackground defaultColumn borderLeft"><img src="images/ic_arrow_b.gif"
+                        alt="회색 아이콘">전화</td>
+                <td colspan="4" class="borderRight"><input type="tel" name="phoneNumber"></td>
+            </tr>
+            <tr>
+                <td class="blueBackground border" colspan="5">관심분야</td>
+            </tr>
+            <tr>
+                <td class="defaultColumn borderLeft"><input type="checkbox">Visual Basic</td>
+                <td class="defaultColumn"><input type="checkbox">C</td>
+                <td class="defaultColumn"><input type="checkbox">Java</td>
+                <td class="defaultColumn"><input type="checkbox">ASP</td>
+                <td class="defaultColumn borderRight"><input type="checkbox">PHP</td>
+            </tr>
+            <tr>
+                <td class="defaultColumn borderLeft"><input type="checkbox">XML</td>
+                <td class="defaultColumn"><input type="checkbox">Javascript</td>
+                <td class="defaultColumn"><input type="checkbox">HTML</td>
+                <td class="defaultColumn"><input type="checkbox">Dreamweaver</td>
+                <td class="defaultColumn borderRight"><input type="checkbox">정보처리기사</td>
+            </tr>
+            <tr>
+                <td class="defaultColumn borderLeft"><input type="checkbox">Linux</td>
+                <td class="defaultColumn"><input type="checkbox">Unix</td>
+                <td class="defaultColumn"><input type="checkbox">Windows2000</td>
+                <td class="defaultColumn"><input type="checkbox">Oracle</td>
+                <td class="defaultColumn borderRight"><input type="checkbox">MS-SQL</td>
+            </tr>
+            <tr>
+                <td class="defaultColumn borderLeft borderBottom"><input type="checkbox">MySQLc</td>
+                <td class="defaultColumn borderBottom"><input type="checkbox">DB모델링</td>
+                <td class="defaultColumn borderBottom"><input type="checkbox">MCP</td>
+                <td class="defaultColumn borderBottom"><input type="checkbox">OCP</td>
+                <td class="defaultColumn borderRight borderBottom"><input type="checkbox">SCJP</td>
+            </tr>
+        </table>
+        <br>
+        <div align=center>
+            <input type="button" onclick="checkFunction()" value="확인"></button>
+            <button type="reset">다시쓰기</button>
+        </div>
+    </form>
+    <script>
+        //var tableTd = tableTr.children[1];
+        var id = document.querySelector('input[name="id"]');
+        var password = document.querySelector('input[name="password"]');
+        var reEnterPassword = document.querySelector('input[name="reEnterPassword"]');
+        var nameValue = document.querySelector('input[name="name"]');
+
+        var email = document.querySelector('input[name="email"]');
+        var emailPattern = /.+@*.+.*.+/;
+        var idSpanAdd = document.querySelector("#idSpanTag");
+        var passwordSpanAdd = document.querySelector("#passwordSpanTag");
+        var passwordReEnterSpanAdd = document.querySelector("#passwordReEnterSpanTag");
+        var nameSpanAdd = document.querySelector("#nameSpanTag");
+        var emailSpanAdd = document.querySelector("#emailSpanTag");
+        var rrnSpanAdd = document.querySelector("#rrnSpanTag");
+
+        var checkboxAll = document.querySelectorAll('input[type="checkbox"]');
+        var checkboxCheck = [];
+        var checkCount = 0;
+
+        function checkFunction() {
+            //초기화
+            idSpanAdd.innerText = "";
+            passwordSpanAdd.innerText = "";
+            passwordReEnterSpanAdd.innerText = "";
+            nameSpanAdd.innerText = "";
+            emailSpanAdd.innerText = "";
+            rrnSpanAdd.innerText = "";
+
+            var idTrim = id.value.trim();
+            var passwordTrim = password.value.trim();
+            var reEnterPasswordTrim = reEnterPassword.value.trim();
+            var nameValueTrim = nameValue.value.trim();
+            var emailTrim = email.value.trim();
+            //var rrnTrim = rrn.value.trim();
+            //var rrnTrim2 = rrn2.value.trim();
+
+            //아이디 길이 체크
+            if (idTrim.length < 5) {
+                idSpanAdd.innerText = "아이디를 다시 입력해주세요";
+                return false;
+            }
+
+            //비밀번호 길이 체크
+            if (passwordTrim.length < 8) {
+                passwordSpanAdd.innerText = "비밀번호를 다시 입력해주세요";
+                return false;
+            }
+
+            //비밀번호 재입력 시 입력한 비밀번호와 일치하는지 체크
+            if (!(reEnterPasswordTrim == passwordTrim)) {
+                passwordReEnterSpanAdd.innerText = "비밀번호가 다릅니다";
+                return false;
+            }
+
+            //이름을 입력 했는지 체크
+            if (nameValueTrim.length <= 0) {
+                nameSpanAdd.innerText = "이름을 입력하세요";
+                return false;
+            }
+
+            //이메일 체크
+            if (emailTrim == "") {
+                emailSpanAdd.innerText = "이메일을 입력하세요";
+                return false;
+            } else if (!emailPattern.test(emailTrim)) {
+                emailSpanAdd.innerText = "이메일형식이 아닙니다";
+                return false;
+            }
+
+            //주민번호 입력받은 것 검사하기 위한 데이터로 만드는 코드
+            var rrn = document.querySelector('input[name="rrn"]');
+            var rrn2 = document.querySelector('input[name="rrn2"]');
+
+            //입력된 주민번호를 string으로 형변환하고
+            //""로 문자열 나누기하면 값이 각각 나누어서 배열로 저장됨
+            var rrnArr = String(rrn.value).split("");
+            var rrnArr2 = String(rrn2.value).split("");
+            var rrnArrHap = [];
+            //입력한 주민번호가 담겨진 배열에서 ,를 제거하여 각각 배열로 저장함
+            for (var i = 0; i < rrnArr.length; i++) {
+                rrnArrHap.push(rrnArr[i]);
+            }
+            for (var i = 0; i < rrnArr2.length; i++) {
+                rrnArrHap.push(rrnArr2[i]);
+            }
+            var mulNum = [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5];
+            var mulValue = 0;
+
+            //rrnArr2에 입력된 주민번호 배열에서 마지막 값을 제외하고
+            //mulNum을 곱한값들을 mulValue에 전부 합하여 넣는다.
+            for (var i = 0; i < rrnArrHap.length - 1; i++) {
+                mulValue += rrnArrHap[i] * mulNum[i];
+            }
+
+            //11에서 나눈값을 뺐을때 정상적인 주민번호를 입력해도 -값이 나옴.
+            var divValue = mulValue % 11;
+            var subValue = 11 - divValue;
+
+            //일의자리 값을 구해서 oneDigit에 넣어준다.
+            var oneDigit = subValue;
+
+            //주민번호 체크
+            if (oneDigit == rrnArrHap[12]) {
+
+            } else {
+                rrnSpanAdd.innerText = "정상적인 주민번호값을 입력하세요";
+            }
+
+            //체크박스 체크
+            var checkCount = 0;
+            for (var i = 0; i < checkboxAll.length; i++) {
+                if (checkboxAll[i].checked == true) {
+                    checkCount++;
+                }
+            }
+
+            if (checkCount < 1) {
+                alert("체크박스는 최소 하나를 체크해야 합니다");
+                return false;
+            }
+
+            if((checkCount>1) || (oneDigit == rrnArrHap[12]) || emailPattern.test(emailTrim)
+            || (nameValueTrim.length > 0) || (reEnterPasswordTrim == passwordTrim) || (passwordTrim.length >= 8) || (idTrim.length >= 5)){
+                alert("회원가입 완료입니다");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
